@@ -33,6 +33,8 @@ Studying python distributed execution
         ```
         mp.spawn(self.ddp_train, nprocs=self.num_processes, args=(model,))
         ```
+## huggingface-transformers(./ha)
+* parallelize
 
 ## huggingface-accelerate (./ha/)
 * multi-gpu
