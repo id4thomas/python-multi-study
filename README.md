@@ -34,6 +34,9 @@ Studying python distributed execution
         mp.spawn(self.ddp_train, nprocs=self.num_processes, args=(model,))
         ```
 
+## huggingface-accelerate (./ha/)
+* multi-gpu
+
 # Experiments
 ## multiprocessing (./mp/)
 * mp_file_access.ipynb
