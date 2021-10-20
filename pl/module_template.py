@@ -40,7 +40,7 @@ class BaselineDataModule(LightningDataModule):
         '''returns validation dataloader'''
         return examples_to_dataloader(self.dev_examples,self.batch_size,is_train=False,is_predict=False)
 
-class BaselineBERT(pl.LightningModule):
+class BaselineBERT(LightningModule):
     def __init__(self,model,t_total):
         super().__init__()
         self.model=model
