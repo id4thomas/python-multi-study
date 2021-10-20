@@ -1,9 +1,14 @@
 # python-multi-study
 Studying python distributed execution
 
+# Concepts
 ## multiprocessing (./mp/)
-* mp_file_access
-    * Multiple processes safely writing to file
+* offers both local & remote concurrency
+    * sidesteps GIL (Global Intepreter Lock) by using subprocesses instead of threads
+    * GIL: used by Cython to assure that only one thread executes Python bytecode at a time
+
+## threading (./th/)
+* only one thread can execute Python code at once
 
 ## pytorch-lightning (./pl/)
 * multi-gpu
@@ -29,7 +34,19 @@ Studying python distributed execution
         mp.spawn(self.ddp_train, nprocs=self.num_processes, args=(model,))
         ```
 
+# Experiments
+## multiprocessing (./mp/)
+* mp_file_access.ipynb
+    * Multiple processes safely writing to file
+    * mp.Pool
+        * Creates specified number of processes & 
+
+## pytorch-lightning (./pl/)
+* ddp.py
+    * script based DDP
+    * LightningModule, LightningDataModule
         
 ## References
+* https://docs.python.org/3/library/multiprocessing.html
 * https://pytorch-lightning.readthedocs.io/en/stable/advanced/multi_gpu.html
 * https://devblog.pytorchlightning.ai/distributed-deep-learning-with-pytorch-lightning-part-1-8df1d032e6d3
