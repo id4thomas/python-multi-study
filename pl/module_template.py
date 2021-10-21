@@ -1,6 +1,6 @@
 from pytorch_lightning import Trainer, LightningDataModule, LightningModule
 
-class BaselineDataModule(LightningDataModule):
+class DataModuleTemplate(LightningDataModule):
     def __init__(self, data_dir,tokenizer,max_seq_length, batch_size=256):
         super().__init__()
         self.batch_size = batch_size
@@ -40,7 +40,7 @@ class BaselineDataModule(LightningDataModule):
         '''returns validation dataloader'''
         return examples_to_dataloader(self.dev_examples,self.batch_size,is_train=False,is_predict=False)
 
-class BaselineBERT(LightningModule):
+class LightningModuleTemplate(LightningModule):
     def __init__(self,model,t_total):
         super().__init__()
         self.model=model
